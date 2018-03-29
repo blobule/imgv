@@ -1,0 +1,32 @@
+#
+# setup raspicam and display on a rasbperry pi
+#
+p=osc.udp://226.0.0.1:4444
+
+oscsend $p /@/addPlugin ss V pluginViewerGLES2
+oscsend $p /@/addPlugin ss C pluginRaspicam
+
+oscsend $p /@/addQueue s recycle
+oscsend $p /@/addQueue s display
+
+oscsend $p /@/addEmptyImages si recycle 10
+
+oscsend $p /@/connect sss recycle C in
+oscsend $p /@/connect sss display C out
+oscsend $p /@/connect sss display V in
+
+oscsend $p /display/add-layer s es2-simple
+oscsend $p /display/init-done
+
+oscsend $p /recycle/view s tex
+oscsend $p /recycle/setWidth i 1280
+oscsend $p /recycle/setHeight i 960
+oscsend $p /recycle/setFormat i 3
+oscsend $p /recycle/setExposure i 1
+oscsend $p /recycle/setMetering i 1
+oscsend $p /recycle/automatic T 0
+oscsend $p /recycle/init-done
+
+oscsend $p /@/start s V
+oscsend $p /@/start s C
+

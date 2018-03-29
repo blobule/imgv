@@ -1,0 +1,64 @@
+/*!
+
+@page news
+
+@tableofcontents
+
+@section news_02 New features in version 0.2
+
+@subsection news_01_raspi Raspberry Pi support
+
+A new viewer plugin (\ref pluginViewerGLES2 ) was designed for the reaspberry pi. It features multiple stackable shaders and hard coded uniform textures for one image and one 16bit lookup table for deformation.
+
+@section news_01 New features in version 0.1
+
+@subsection news_01_cmake CMake build system
+
+IMGV uses CMake. Its only tesstes on Linux and MacOs.
+
+For more information on how to use CMake, see the
+[CMake manual](http://cmake.org/cmake/help/documentation.html).
+
+@subsection new_01_glfw GLFW window management
+
+GLFW allows managing of multiple windows, each with multiple areas (quad) to display images.
+Each quad can have its own shader. Windows can be on fullscreen and on differents monitors.
+
+@subsection news_01_queues Queues
+
+The IMGV library provides multi-threading queues which can store imgages and messages.
+These queues make it easy to synchronize processes and keep memory usage under control 
+through recycling.
+
+@subsection news_01_plugin Plugin system
+
+Plugins are basic building block for processing and are each given a single thread
+(altough you can run them directly without threading).
+ They synchronize and exchange information
+through queues. Typically, image processing is setup as a pipeline of plugins
+interconnected with queues. This allow easy paralelisation of long processes.
+
+@subsection news_01_osc OSC message system
+
+OSC (Open Sound Control) is used as for generic message passing between plugins.
+It is thus easy to connect to the outside to any OSC compliant application.
+
+@subsection news_01_viewer Viewer plugin
+
+Basic GLFW viewer, fully configurable in real time throught OSC message. Support the
+association of shaders to quads and direct modification of uniform parameters though
+OSC messages.
+
+@subsection news_01_ffmpeg FFMPEG plugin
+
+Generic movie player, based on ffmpeg. It can decode to RGB, YUV or MONO formats, and
+has automatic buffering to ensure never missing a frame because of other processing.
+
+@subsection news_01_drip Drip plugin
+
+The drip plugin output images at a predefinedd frame rate. It ensures global synchronisation
+through the use of absolute starting times. It can be paused interactively, and the
+framerate can be changed while ensuring perfect multi-machine synchronisation.
+
+
+*/

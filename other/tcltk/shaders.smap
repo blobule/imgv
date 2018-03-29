@@ -1,0 +1,12 @@
+#
+# shader uniform definitions
+#
+# lister les uniformes texture (et autres eventuellement)
+#
+set shaders {}
+dict set shaders homographieQuad tex texture
+dict set shaders homographieQuadLut tex texture
+dict set shaders homographieQuadLut lut texture
+dict set shaders normal tex texture
+puts $shaders
+

@@ -1,0 +1,13 @@
+
+
+besoin de tcludp:
+
+sudo apt-get install libudp-tcl
+exemples dans: /usr/share/doc/libudp-tcl/demos
+
+# dans les nouvelles versions:
+sudo apt-get install tcl-udp
+exemples dans: /usr/share/doc/tcl-udp
+
+
+

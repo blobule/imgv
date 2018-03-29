@@ -1,0 +1,25 @@
+
+/*!
+
+\defgroup plugins Plugins
+@{
+Here are the building blocks of applications, the plugins.<br>
+A plugin run in its own thread and usually received images and OSC messages
+which are then processes. The result is usually more images and OSC messages
+sent to other plugins.
+
+The exchange of information between plugins always goes through a queue where
+recyclables (such as images, called blob, and messages) are put to wait for
+processing.
+
+@}
+
+\defgroup examples Examples code
+@{
+	Here are some examples of how to use the imgv library.<br>
+	Each example illustrates the use of a few plugins.
+@}
+
+*/
+
+

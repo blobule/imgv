@@ -1,0 +1,18 @@
+/*!
+
+@mainpage notitle
+
+@section main_intro Introduction
+
+IMGV is an imaging and computer vision multithreading library. Built on top of opencv,
+it provides a simple way to acheive realtime performance and multithreading,
+as well as advanced OpenGL visualisation of images.
+
+This is the documentation for version 0.1, which is the first step (@ref news).
+
+There is a [quick tutorial] as well as commented examples, to help figure how to use
+this library.
+
+
+
+*/

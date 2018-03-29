@@ -1,0 +1,38 @@
+# - Find OCULUS
+# Find the native OCULUS (Vimba drivers) includes and library
+# This module defines
+#  OCULUS_INCLUDE_DIR, where to find jpeglib.h, etc.
+#  OCULUS_LIBRARIES, the libraries needed to use OCULUS.
+#  OCULUS_FOUND, If false, do not try to use OCULUS.
+# also defined, but not for general use are
+#  OCULUS_LIBRARY, where to find the OCULUS library.
+
+FIND_PATH(OCULUS_INCLUDE_DIR OVR.h
+    PATHS /usr/local/include)
+
+FIND_LIBRARY(OCULUS_LIBRARY ovr)
+#FIND_LIBRARY(OCULUS_LIBRARY OVR)
+
+IF (OCULUS_LIBRARY AND OCULUS_INCLUDE_DIR)
+  SET(OCULUS_LIBS ${OCULUS_LIBRARY})
+  SET(OCULUS_FOUND "YES")
+ELSE()
+  SET(OCULUS_FOUND "NO")
+ENDIF()
+
+
+IF (OCULUS_FOUND)
+   IF (NOT OCULUS_FIND_QUIETLY)
+      MESSAGE(STATUS "Found OCULUS: ${OCULUS_LIBS}")
+   ENDIF (NOT OCULUS_FIND_QUIETLY)
+ELSE (OCULUS_FOUND)
+   IF (OCULUS_FIND_REQUIRED)
+      MESSAGE(FATAL_ERROR "Could not find OCULUS library")
+   ENDIF (OCULUS_FIND_REQUIRED)
+ENDIF (OCULUS_FOUND)
+
+MARK_AS_ADVANCED(
+  OCULUS_LIBRARY
+  OCULUS_INCLUDE_DIR
+  )
+

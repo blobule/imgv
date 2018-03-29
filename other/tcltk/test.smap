@@ -1,0 +1,24 @@
+#
+# exemple de controle complet
+#
+# start : remet le temps a zero
+#
+start
+#at	1   openFile test1.smap
+at   5     puts "5 secondes depuis le debut"
+at   5.5   puts "5 secondes et demi"
+at 1:00     puts "une minute"
+#at 1:00.200 puts "et 200 millis"
+#at 1:30.500 puts "bonjour 3 secondes plus tard"
+#puts "fini!"
+at 1.99 activatePreset preset1
+at 2 ::osc::send mapper /display/set/proj1/A/fade f 0
+at 2 ::osc::send mapper /display/set/proj1/B/fade f 0
+at 2 ::osc::send mapper /display/set/proj1/C/fade f 0.25
+at 10 animate 0 1 3 60 ::osc::send mapper /display/set/proj1/A/fade f
+at 10 animate 0 1 3 60 ::osc::send mapper /display/set/proj1/B/fade f
+at 20 animate 1 0 3 60 ::osc::send mapper /display/set/proj1/A/fade f
+at 20 animate 1 0 3 60 ::osc::send mapper /display/set/proj1/B/fade f
+at 20 animate 0.25 1 6 120 ::osc::send mapper /display/set/proj1/C/fade f
+
+at 40 deactivatePreset preset1

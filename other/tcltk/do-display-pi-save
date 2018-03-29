@@ -1,0 +1,41 @@
+#
+# setup raspicam and display on a rasbperry pi
+#
+oscsend 192.168.2.117 44444 /@/addPlugin ss V pluginViewerGLES2
+oscsend 192.168.2.117 44444 /@/addPlugin ss C pluginRaspicam
+oscsend 192.168.2.117 44444 /@/addPlugin ss S pluginSave
+
+oscsend 192.168.2.117 44444 /@/addQueue s recycle
+oscsend 192.168.2.117 44444 /@/addQueue s display
+oscsend 192.168.2.117 44444 /@/addQueue s save
+
+oscsend 192.168.2.117 44444 /@/addEmptyImages si recycle 1
+
+oscsend 192.168.2.117 44444 /@/connect sss recycle C in
+oscsend 192.168.2.117 44444 /@/connect sss display C out
+oscsend 192.168.2.117 44444 /@/connect sss display V in
+oscsend 192.168.2.117 44444 /@/connect sss save V out
+oscsend 192.168.2.117 44444 /@/connect sss save S in
+
+oscsend 192.168.2.117 44444 /display/add-layer s es2-simple
+oscsend 192.168.2.117 44444 /display/init-done
+
+oscsend 192.168.2.117 44444 /recycle/view s tex
+oscsend 192.168.2.117 44444 /recycle/setWidth i 1280
+oscsend 192.168.2.117 44444 /recycle/setHeight i 960
+oscsend 192.168.2.117 44444 /recycle/setFormat i 3
+oscsend 192.168.2.117 44444 /recycle/setExposure i 1
+oscsend 192.168.2.117 44444 /recycle/setMetering i 1
+oscsend 192.168.2.117 44444 /recycle/automatic T 0
+oscsend 192.168.2.117 44444 /recycle/init-done
+
+oscsend 192.168.2.117 44444 /save/mode s internal
+oscsend 192.168.2.117 44444 /save/filename s toto%04d.jpg
+oscsend 192.168.2.117 44444 /save/quality i 90
+oscsend 192.168.2.117 44444 /save/init-done
+
+
+oscsend 192.168.2.117 44444 /@/start s V
+oscsend 192.168.2.117 44444 /@/start s C
+oscsend 192.168.2.117 44444 /@/start s S
+

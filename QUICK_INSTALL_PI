@@ -1,0 +1,93 @@
+-- Fast install for Raspberry PI (raspbian) --
+
+This install assumes that the current directory is where this file is located.
+
+There are a few dependencies that must be checked before compiling imgv.
+Some dependencies are packages, some are actual code you must compile.
+The full instructions for dependencies are in the file other/README.
+
+Execute theses commands:
+
+---
+sudo apt-get install build-essential cmake-curses-gui libopencv-dev libpng12-dev
+sudo apt-get install libavutil-dev libavformat-dev libavcodec-dev libswscale-dev
+sudo apt-get install libav-tools doxygen
+sudo apt-get install libglew-dev
+
+
+-- read this:  /opt/vc/src/hello_pi/README 
+cd /opt/vc/src/hello_pi/libs/ilclient
+make
+(that's it)
+
+-- glfw
+sudo apt-get install libgegl-dev x11proto-xf86vidmode-dev libxxf86vm-dev
+cd other/glfw-3.0.1 && mkdir -p build && cd build
+ccmake ..
+
+	GLFW_BUILD_EXAMPLES	OFF
+	GLFW_USE_EGL		ON
+[c]
+	GLFW_CLIENT_LIBRARY	glesv2
+[c]
+	EGL_INCLUDE_DIR		/opt/vc/include
+	EGL_LIBRARY		/opt/vc/lib/libEGL.so
+[c]
+	GLESv2_INCLUDE_DIR	/usr/include/gegl-0.2 ; /opt/vc/include ; /opt/vc/include/interface/vcos/pthreads
+	GLESv2_LIBRARY		/usr/lib/arm-linux-gnueabihf/libgegl-0.2.so
+
+make && sudo make install
+
+---- raspicam ----
+
+http://www.uco.es/investiga/grupos/ava/node/40
+http://sourceforge.net/projects/raspicam/files/
+
+# for example:
+http://sourceforge.net/projects/raspicam/files/raspicam-0.1.3.zip/download
+
+cd raspicam-0.1.3
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+
+--- oscpack
+
+cd other/oscpack_1_1_0 && mkdir -p build && cd build && cmake .. && make && sudo make install && cd ../../..
+
+echo "export LD_LIBRARY_PATH=\${LD_LIBRARY_PATH}:/usr/local/lib" >> ~/.bashrc
+---
+
+At this point, make sure you exit and restart a new terminal, so the new installed libraries are seen by bash. Go to the imgv directory containing this file.
+
+Then execute these commands:
+
+--
+mkdir -p build && cd build && cmake .. && make && sudo make install
+--
+
+To test, just execute:
+
+playImage
+
+The indian head should show up. Move the mouse over the image and press 1,2,3,4 to distort the image.
+
+The documentation will be installed here:
+
+file:///usr/local/share/imgv/docs/html/index.html
+
+That's it!
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+
+
+--- using playPi ---
+
+
+
+
+

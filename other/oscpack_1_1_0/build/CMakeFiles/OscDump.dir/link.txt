@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -Wextra -Wno-long-long -pedantic   CMakeFiles/OscDump.dir/examples/OscDump.cpp.o  -o OscDump -rdynamic liboscpack.so -Wl,-rpath,/home/roys/svn3d/imgv/other/oscpack_1_1_0/build 

@@ -1,0 +1,10 @@
+
+ link library [libavcodec.so] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /usr/local/lib
+    link library [libavutil.so] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /usr/local/lib
+    link library [libavformat.so] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /usr/local/lib
+    link library [libswscale.so] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /usr/local/lib
+

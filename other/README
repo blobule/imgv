@@ -1,0 +1,106 @@
+-- la base ---
+
+sudo apt-get install cmake-curses-gui
+sudo apt-get install libopencv-dev
+sudo apt-get install libpng12-dev
+
+--- dependence a FFMPEG ---
+
+On peut compiler des sources....
+mais on peut essayer les packages, si les versions sont raisonnables...
+
+sudo apt-get install libavutil-dev libavformat-dev libavcodec-dev libswscale-dev
+
+Pour avoir avconv:
+ATTENTION! ce package install des librairies opencv... (!!!!)
+sudo apt-get install libav-tools
+
+---- if rasberry pi ... -----
+
+	voir /opt/vc/src/hello_pi/README 
+
+	cd /opt/vc/src/hello_pi/libs/ilclient
+	make
+	(c'est tout!)
+
+
+--- GLFW ---
+
+sudo apt-get install libglew-dev libxrandr-dev
+
+-- if raspberry PI --
+	sudo appt-get install libgegl-dev x11proto-xf86vidmode-dev libxxf86vm-dev
+
+	ccmake ..
+
+	GLFW_USE_EGL			ON
+	GLFW_CLIENT_LIBRARY		glesv2
+
+	ccmake ..
+
+	EGL_INCLUDE_DIR		/opt/vc/include
+	EGL_LIBRARY		/opt/vc/lib/libEGL.so
+
+	ccmake ..
+
+	GLESv2_INCLUDE_DIR              /usr/include/gegl-0.2 ; /opt/vc/include ; /opt/vc/include/interface/vcos/pthreads
+	GLESv2_LIBRARY                  /usr/lib/arm-linux-gnueabihf/libgegl-0.2.so
+--
+
+On doit installer glfw des sources
+
+cd glfw-3.0.1
+mkdir build
+cd build
+cmake ..
+# NOTE: if you set GLFW_BUILD_EXAMPLES to ON, it will only work if 
+#       you set BUILD_SHARED_LIBS to OFF
+#
+# on raspberrypi : EGL and GLES2 are in /opt/vc
+
+
+
+#
+make
+sudo make install
+
+
+--- oscpack_1_1_0 ---
+
+cd oscpack_1_1_0
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+
+
+---- raspicam ----
+
+
+
+http://www.uco.es/investiga/grupos/ava/node/40
+http://sourceforge.net/projects/raspicam/files/
+
+
+cd raspicam-0.0.6
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+
+----- compiler opencv -----
+
+unzip opencv-2.4.8.zip
+cd opencv-2.4.8
+mkdir dir build
+cd build
+cmake ..
+
+
+---- a la fin... ---
+
+edit .bashrc :
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib
+

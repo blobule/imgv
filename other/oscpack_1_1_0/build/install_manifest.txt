@@ -1,0 +1,14 @@
+/usr/local/lib/liboscpack.so
+/usr/local/include/oscpack/ip/IpEndpointName.h
+/usr/local/include/oscpack/ip/NetworkingUtils.h
+/usr/local/include/oscpack/ip/UdpSocket.h
+/usr/local/include/oscpack/ip/PacketListener.h
+/usr/local/include/oscpack/ip/TimerListener.h
+/usr/local/include/oscpack/osc/OscTypes.h
+/usr/local/include/oscpack/osc/OscHostEndianness.h
+/usr/local/include/oscpack/osc/OscException.h
+/usr/local/include/oscpack/osc/OscPacketListener.h
+/usr/local/include/oscpack/osc/MessageMappingOscPacketListener.h
+/usr/local/include/oscpack/osc/OscReceivedElements.h
+/usr/local/include/oscpack/osc/OscPrintReceivedElements.h
+/usr/local/include/oscpack/osc/OscOutboundPacketStream.h

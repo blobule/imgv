@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -Wextra -Wno-long-long -pedantic   CMakeFiles/OscUnitTests.dir/tests/OscUnitTests.cpp.o  -o OscUnitTests -rdynamic liboscpack.so -Wl,-rpath,/home/roys/svn3d/imgv/other/oscpack_1_1_0/build 

@@ -1,0 +1,46 @@
+#ifndef IMGV_CONFIG_H
+#define IMGV_CONFIG_H
+
+/** configuration provenant de cmake **/
+
+// the configured options and settings for Tutorial
+#define IMGV_VERSION "@IMGV_VERSION_MAJOR@.@IMGV_VERSION_MINOR@.@IMGV_VERSION_PATCH@"
+#define IMGV_VERSION_MAJOR @IMGV_VERSION_MAJOR@
+#define IMGV_VERSION_MINOR @IMGV_VERSION_MINOR@
+#define IMGV_VERSION_PATCH @IMGV_VERSION_PATCH@
+#define IMGV_SHARE "@CMAKE_INSTALL_PREFIX@/@IMGV_SHARE@/"
+#define IMGV_INSTALL_PREFIX "@CMAKE_INSTALL_PREFIX@/"
+
+// extra info
+#cmakedefine HAVE_PROFILOMETRE
+
+#cmakedefine APPLE
+
+#cmakedefine IMGV_RASPBERRY_PI
+
+#cmakedefine HAVE_AVCONV
+
+// available plugins
+
+#cmakedefine HAVE_PLUGIN_V4L2
+#cmakedefine HAVE_PLUGIN_NET
+#cmakedefine HAVE_PLUGIN_STREAM
+#cmakedefine HAVE_PLUGIN_SYSLOG
+#cmakedefine HAVE_PLUGIN_DRIP
+#cmakedefine HAVE_PLUGIN_DRIPMULTI
+#cmakedefine HAVE_PLUGIN_FFMPEG
+#cmakedefine HAVE_PLUGIN_HOMOG
+#cmakedefine HAVE_PLUGIN_PATTERN
+#cmakedefine HAVE_PLUGIN_PROSILICA
+#cmakedefine HAVE_PLUGIN_PTGREY
+#cmakedefine HAVE_PLUGIN_SAVE
+#cmakedefine HAVE_PLUGIN_READ
+#cmakedefine HAVE_PLUGIN_SYNC
+#cmakedefine HAVE_PLUGIN_VIEWER_GLFW
+#cmakedefine HAVE_PLUGIN_VIEWER_GLES2
+#cmakedefine HAVE_PLUGIN_RASPICAM
+#cmakedefine HAVE_PLUGIN_WEBCAM
+#cmakedefine HAVE_PLUGIN_LEOPARD
+
+#endif
+

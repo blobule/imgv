@@ -1,0 +1,8 @@
+
+
+Voici ce que contient ce superbe repertoire: 
+
+shaders: contient des shaders    xyz_frag.glsl et xyz_vert.glsl seront trouve si on
+demande le shader 'xyz'
+
+
